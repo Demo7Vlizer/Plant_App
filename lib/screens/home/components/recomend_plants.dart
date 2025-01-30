@@ -77,7 +77,7 @@ class RecomendPlantCard extends StatelessWidget {
         top: kDefaultPadding / 2,
         bottom: kDefaultPadding * 2.5,
       ),
-      width: size.width * 0.4,
+      width: size.width * 0.4,   //it's taking 40% of the screen width 
       child: Column(
         children: <Widget>[
           Image.asset(image),
