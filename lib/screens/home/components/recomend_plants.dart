@@ -22,7 +22,13 @@ class RecomendsPlants extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
+                  builder: (context) => DetailsScreen(
+                    title: "Samantha",
+                    country: "Russia",
+                    price: 440,
+                    image: "assets/images/image_1.png",
+                    description: "A beautiful plant native to Russia.",
+                  ),
                 ),
               );
             },
@@ -36,7 +42,13 @@ class RecomendsPlants extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
+                  builder: (context) => DetailsScreen(
+                    title: "Angelica",
+                    country: "Russia",
+                    price: 440,
+                    image: "assets/images/image_2.png",
+                    description: "A beautiful plant native to Russia.",
+                  ),
                 ),
               );
             },
@@ -70,14 +82,14 @@ class RecomendPlantCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
+    Size size = MediaQuery.of(context).size;   //it's used to make the card width responsive
+    return Container(   
       margin: EdgeInsets.only(
         left: kDefaultPadding,
         top: kDefaultPadding / 2,
         bottom: kDefaultPadding * 2.5,
       ),
-      width: size.width * 0.4,   //it's taking 40% of the screen width 
+      width: size.width * 0.4,    //-- It'll will cover 40% of our total width.. 
       child: Column(
         children: <Widget>[
           Image.asset(image),

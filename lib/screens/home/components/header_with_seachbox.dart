@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../constants.dart';
 
@@ -16,7 +15,7 @@ class HeaderWithSearchBox extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: kDefaultPadding * 2.5),
       // It will cover 20% of our total height
-      height: size.height * 0.2,    //it's taking 20% of the screen height and adding it to the container 
+      height: size.height * 0.2,
       child: Stack(
         children: <Widget>[
           Container(
@@ -25,7 +24,7 @@ class HeaderWithSearchBox extends StatelessWidget {
               right: kDefaultPadding,
               bottom: 36 + kDefaultPadding,
             ),
-            height: size.height * 0.2 - 27,   //it's taking 20% of the screen height and subtracting 27 
+            height: size.height * 0.2 - 27,
             decoration: BoxDecoration(
               color: kPrimaryColor,
               borderRadius: BorderRadius.only(
@@ -77,10 +76,13 @@ class HeaderWithSearchBox extends StatelessWidget {
                         ),
                         enabledBorder: InputBorder.none,
                         focusedBorder: InputBorder.none,
+                        prefixIcon: Icon(
+                          Icons.search,
+                          color: kPrimaryColor.withOpacity(0.5),
+                        ),
                       ),
                     ),
                   ),
-                  SvgPicture.asset("assets/icons/search.svg"),
                 ],
               ),
             ),

@@ -1,27 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:my_app/components/my_bottom_nav_bar.dart';
-import 'package:my_app/constants.dart';
+import 'package:my_app/components/base_layout.dart';
+import 'package:my_app/components/my_drawer.dart';
 import 'package:my_app/screens/home/components/body.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppBar(),
+    return BaseLayout(
+      currentIndex: 0,
+      appBar: buildAppBar(context),
       body: Body(),
-      bottomNavigationBar: MyBottomNavBar(),
+      drawer: MyDrawer(),
     );
   }
 
-
-  AppBar buildAppBar() {
+  AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      elevation: 0,
-      backgroundColor: kPrimaryColor,
-      leading: IconButton(
-        icon: SvgPicture.asset("assets/icons/menu.svg"),
-        onPressed: () {},
+      backgroundColor: Color(0xFF0C9869),
+      elevation: 0.0,
+      leading: Builder(
+        builder: (BuildContext context) {
+          return IconButton(
+            icon: SvgPicture.asset(
+              "assets/icons/menu.svg",
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          );
+        },
       ),
     );
   }
